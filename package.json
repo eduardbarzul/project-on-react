@@ -10,7 +10,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint .",
-    "prepare": "husky"
+    "test": "vitest",
+    "prepare": "husky",
+    "test:run": "vitest run"
   },
   "lint-staged": {
     "*.{js,jsx}": [
@@ -27,16 +29,23 @@
   "description": "",
   "devDependencies": {
     "@eslint/js": "^9.39.5",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.3",
     "@vitejs/plugin-react": "^6.3.0",
+    "cypress": "^15.21.1",
     "eslint": "^9.39.5",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.1.1",
     "globals": "^17.14.0",
     "husky": "^9.1.7",
+    "jsdom": "^29.1.1",
     "lint-staged": "^16.4.0",
     "prettier": "^3.9.10",
     "sass": "^1.108.1",
-    "vite": "^8.3.7"
+    "vite": "^8.3.7",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "vitest": "^4.1.12"
   },
   "dependencies": {
     "claude": "^0.1.1",

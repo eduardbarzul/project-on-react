@@ -12,7 +12,6 @@ export default [
 
   {
     files: ['**/*.{js,jsx}'],
-
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
@@ -23,24 +22,36 @@ export default [
         },
       },
     },
-
     plugins: {
       react,
       'react-hooks': reactHooks,
     },
-
     settings: {
       react: {
         version: 'detect',
       },
     },
-
     rules: {
       ...react.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
-
       'react/react-in-jsx-scope': 'off',
       'react/prop-types': 'off',
+    },
+  },
+
+  {
+    files: ['cypress/**/*.js', 'cypress.config.js'],
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+        describe: 'readonly',
+        it: 'readonly',
+        cy: 'readonly',
+      },
+    },
+    rules: {
+      'no-unused-vars': 'off',
     },
   },
 ];
